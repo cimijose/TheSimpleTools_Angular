@@ -1,0 +1,17 @@
+<!-- RNA to DNA CONVERSION -->
+		<form name="rna2dnaForm"novalidate>
+			<div class="head1">RNA to DNA Conversion</div>
+			<div  class="form-inline" >				
+			  <div class="form-group">
+				RNA
+				<textarea name ="rna" ng-model="rna2dnaCtrl.rna" class="form-control" 
+				ng-keyup="rna2dnaForm.$valid && rna2dnaCtrl.convert()" ng-pattern="/^[augcAUGC]*$/" ></textarea>
+			  </div>
+			  <div ng-messages="rna2dnaForm.rna.$error" class="errors">
+				  
+				  <div  ng-message="pattern">Oops.....RNA should contain 'A' or 'U' or 'G' or 'C' only !!!</div>
+			  </div>
+			  <label class="form-group text-info" > corresponding DNA is {{rna2dnaCtrl.dna}}</label>			    
+			</div>
+		</form>
+		
