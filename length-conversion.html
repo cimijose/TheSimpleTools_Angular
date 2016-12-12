@@ -1,0 +1,22 @@
+<!-- UNIT CONVERSION - LENGTH -->
+			
+			<div class="head1">Length Conversion</div>
+			<div  class="form-inline" >				
+			  <div class="form-group">
+				<input type="number" ng-model="lenCtrl.fromLen" class="form-control" ng-keyup="lenCtrl.convert()"/>
+			  </div>
+			  <div class="form-group" > 
+			  	<select name="fromLenUnit" id="fromLenUnit" class="form-control"
+                 ng-options="option.name for option in lenCtrl.lenUnitData.lenUnitOptions track by option.id"
+                 ng-model="lenCtrl.lenUnitData.selectedFromOption" ng-change="lenCtrl.convert()">
+  				</select>			     
+			  </div>
+			  <label class="form-group text-info" >is {{lenCtrl.toLen}}</label>
+			  <div class="form-group">
+			  	<select name="toLenUnit" id="toLenUnit" class="form-control"
+                 ng-options="option.name for option in lenCtrl.lenUnitData.lenUnitOptions track by option.id"
+                 ng-model="lenCtrl.lenUnitData.selectedToOption" ng-change="lenCtrl.convert()">
+  				</select>
+			  </div>			  
+			</div>
+		
