@@ -1,0 +1,86 @@
+ <!DOCTYPE html>
+<html lang="en" ng-app="SimpleTools">
+<head>
+<title>Unit Conversion</title>
+
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script type="text/javascript" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.6.0.js"></script> -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/angular-messages.min.js"></script>
+<script type="text/javascript" src="js/ui-bootstrap-tpls-0.6.0.js"></script>
+
+<script src="js/conversionJs.js"></script>
+<link rel="stylesheet" href="css/conversion.css">
+</head>
+	<body>
+		<div class="header" ></div>
+		<!-- New try menu start -->
+
+
+ 		<nav class="navbar navbar-default" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+
+        <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#" ng-click="ccMenu.setTab(0)">Home</a>
+      </div>
+    
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'"  ng-controller="CommonConversionMenuCtrl as ccMenu">
+      <div>
+        <ul class="nav navbar-nav">
+         
+          
+          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" >Common Conversions <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#" ng-click="ccMenu.setTab(11)">Length</a></li>
+              <li><a href="#" ng-click="ccMenu.setTab(12)">Weight</a></li>              
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" >Genetic Sequence Editor<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#" ng-click="ccMenu.setTab(21)">DNA to RNA Conversion</a></li>
+              <li><a href="#" ng-click="ccMenu.setTab(22)">RNA to DNA Conversion</a></li>              
+            </ul>
+          </li>
+          
+        </ul>
+        <div class="container">
+      <!-- <conversion-tabs></conversion-tabs> -->
+      <div><br><br><br><br></div>
+      <!-- UNIT CONVERSION - LENGTH -->
+      <length-conversion ng-show="ccMenu.isSet(11)" ></length-conversion>
+      <!-- UNIT CONVERSION - WEIGHT -->
+      <weight-conversion  ng-show="ccMenu.isSet(12)"></weight-conversion>
+      <!-- UNIT CONVERSION - Temperature-->
+      <!-- <temperature-conversion  ng-show="ccMenu.isSet(3)"></temperature-conversion> -->
+
+      <!-- Genetic Sequence Editor - DNA to RNA Conversion -->
+      <dna2rna-conversion ng-show="ccMenu.isSet(21)" ></dna2rna-conversion>
+
+      <!-- Genetic Sequence Editor - RNA to DNA Conversion -->
+      <rna2dna-conversion ng-show="ccMenu.isSet(22)" ></rna2dna-conversion>
+      
+    </div>
+        
+      </div><!-- /.navbar-collapse -->
+    </nav>
+    
+
+
+		<!-- New try menu end -->
+
+		
+	</body>
+</html>
