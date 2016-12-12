@@ -1,0 +1,39 @@
+div.navbar-collapse.collapse {
+        display: block;
+        overflow: hidden;
+        max-height: 0px;       
+        -webkit-transition: max-height .3s ease;
+        -moz-transition: max-height .3s ease;
+        -o-transition: max-height .3s ease;
+        transition: max-height .3s ease;
+    }
+    div.navbar-collapse.collapse.in {
+        max-height: 2000px;
+    }
+
+div.header{
+    background-color:  #7cb0ef;
+    color: white;
+    text-align: center;
+    font-family: verdana;
+    font-size: 20px;
+    min-height: 150px;
+    background-image: url("../images/SimpleToolsHeader.png")
+}
+body{
+   background-color:  #faeaf5 ; 
+}
+.head1{
+    color:  #23130c ;
+    font-family: verdana;
+    font-size: 15px;
+    
+}
+
+.errors{
+    color: #c61515;
+}
+
+.ng-invalid.ng-dirty{
+    border-color: #c61515;
+}
