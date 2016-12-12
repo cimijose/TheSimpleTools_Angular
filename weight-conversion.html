@@ -1,0 +1,17 @@
+<!-- UNIT CONVERSION - WEIGHT -->
+
+<div class="head1">Weight Conversion</div>
+			<div class="form-inline" >
+			  <div class="form-group">
+				<input type="number" ng-model="wtCtrl.fromWt" class="form-control" ng-keyup="wtCtrl.convert()"/>
+			  </div>
+			  <div class="form-group">
+			  	<select name="fromWtUnit" id="fromWtUnit" class="form-control" ng-options="option.name for option in wtCtrl.wtUnitData.wtUnitOptions track by option.id" ng-model="wtCtrl.wtUnitData.selectedFromOption" ng-change="wtCtrl.convert()">
+			  	</select>			    
+			  </div>
+			  <label class="form-group text-info" >is {{wtCtrl.toWt}}</label>
+			  <div class="form-group">
+			  	<select name="toWtUnit" id="toWtUnit" class="form-control" ng-options="option.name for option in wtCtrl.wtUnitData.wtUnitOptions track by option.id" ng-model="wtCtrl.wtUnitData.selectedToOption" ng-change="wtCtrl.convert()">
+			  	</select>			   
+			  </div>			  
+			</div>
